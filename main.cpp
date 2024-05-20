@@ -1,23 +1,27 @@
 #include "linkedlist.h"
 #include <iostream>
+#include <cmath>
 
 int main()
 {
-    LinkedList<int> list1;
-    list1.push_back(1);
-    list1.push_back(2);
-    list1.push_back(3);
+    LinkedList<double> list;
 
-    LinkedList<int> list2 = list1;
-    list2.push_back(4);
+    list.push_back(1.0);
+    list.push_back(2.0);
+    list.push_back(3.0);
+    list.push_back(4.0);
+    list.push_back(5.0);
+    list.push_back(6.0);
+    list.push_back(7.0);
 
-    LinkedList<int> list3;
-    list3 = std::move(list2);
+    list.print();
+    std::cout << std::endl;
 
-    for (int val : list3)
-    {
-        std::cout << val << " ";
-    }
+    auto it = list.begin();
+    while (it != list.end())
+        ++it;
+
+    list.print();
     std::cout << std::endl;
 
     return 0;
